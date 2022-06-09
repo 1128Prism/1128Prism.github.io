@@ -73,28 +73,28 @@ img{
 
 .btn{
 	margin-left: 1100px;
-    margin-top: 16px;
-    padding: 15px 25px;
-	font-size: 16px;
+ 	margin-top: 8px;
+ 	padding: 10px 12px;
+	font-size: 12px;
 	cursor: hand;
 	text-align: center;   
-	text-decoration: bold;
+	text-decoration: none;
 	outline: none;
 	color: #fff;
 	background-color: #9D804F;
 	border: none;
 	border-radius: 15px;
-	box-shadow: 0 8px #87582B;  
+	box-shadow: 0 6px #87582B;  
 }
 
 
 .btn:hover {
-    background-color: #FFFACD;
+    background-color: #DAA520;
 }
 
 
 .btn:active {
-  background-color: #FFFACD;
+  background-color: #DAA520;
   box-shadow: 0 5px #87582B;
   transform: translateY(4px);
 }
