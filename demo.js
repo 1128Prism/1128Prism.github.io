@@ -1,6 +1,6 @@
 var i =1;
 var html='';
-
+var htmlN='';
 window.onload=function() {
 	//获取box
 	choosePic()
@@ -69,13 +69,21 @@ function choosePic() {
 
 function empty() {
 	document.getElementById('input').innerHTML="";
-	html = '';
+	html = "";
 	i=1;
+}
+
+function back() {
+	var elem = document.getElementById('copy'+ (i-1));
+	elem.parentNode.removeChild(elem);
+	html=html.replace(htmlN,"");
+	htmlN='';
+	i--;
 }
 
 function refresh() {
 	choosePic();
-	}
+}
 
 function drag(obj) {
 	var init=obj.getAttribute("style");
@@ -106,12 +114,14 @@ function drag(obj) {
 			objStyle = obj.getAttribute("style");
 			var img = obj.innerHTML;
 
-			console.log(objStyle);
-			html += "<div id=copy" + i + " style='width: 150px; height: 150px; position: absolute; background: url(word_bg.png); "+ objStyle + "'>" + obj.innerHTML +"</div>";
+			htmlN="<div id=copy" + i + " style='width: 150px; height: 150px; position: absolute; background: url(word_bg.png); "+ objStyle + "'>" + obj.innerHTML +"</div>";
+			// console.log(objStyle);
+			html += htmlN;
+			console.log(html);
 			i++;
 			document.getElementById('input').innerHTML=html;
 
 			obj.style=init;
-			}
 		}
 	}
+}
