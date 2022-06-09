@@ -1,6 +1,8 @@
 var i =1;
 var html='';
 var htmlN='';
+var htmlArray=new Array();
+
 window.onload=function() {
 	//获取box
 	choosePic()
@@ -74,11 +76,12 @@ function empty() {
 }
 
 function back() {
-	var elem = document.getElementById('copy'+ (i-1));
-	elem.parentNode.removeChild(elem);
-	html=html.replace(htmlN,"");
-	htmlN='';
 	i--;
+	var elem = document.getElementById('copy'+ i);
+	elem.parentNode.removeChild(elem);
+	
+	html=html.replace(htmlArray[i-1],"");
+	htmlArray.pop();
 }
 
 function refresh() {
@@ -102,7 +105,6 @@ function drag(obj) {
 			var top=event.clientY-ot;
 			obj.style.left=left+"px";
 			obj.style.top=top+"px";
-
 		}
 		
 		//为document绑定一个鼠标松开事件
@@ -114,10 +116,9 @@ function drag(obj) {
 			objStyle = obj.getAttribute("style");
 			var img = obj.innerHTML;
 
-			htmlN="<div id=copy" + i + " style='width: 150px; height: 150px; position: absolute; background: url(word_bg.png); "+ objStyle + "'>" + obj.innerHTML +"</div>";
-			// console.log(objStyle);
-			html += htmlN;
-			console.log(html);
+			htmlN="<div id=copy" + i + " style='width: 150px; height: 150px; position: absolute; background: url(word_bg.png); "+ objStyle + "'>" + obj.innerHTML +"</div>"
+			htmlArray.push(htmlN);
+			html += htmlArray[htmlArray.length-1];
 			i++;
 			document.getElementById('input').innerHTML=html;
 
