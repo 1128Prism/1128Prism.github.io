@@ -1,51 +1,110 @@
-<!doctype html>
-<html>
-	<head>
-	<meta charset="utf-8">
-		<title>集字</title>
-		<link rel="stylesheet" href="demo.css">
-		<script type="text/javascript" rel="script" src="demo.js"></script> 	
-	</head>
-	<body style="background-color:#FFFFED;">
-		<div id="banner">
-			<h1 style="text-align: center; padding-top: 50px; color: #f9f9f9;">老坛装新酒，老字呈新意</h1>
-			<h2 style="text-align: center;color: #f9f9f9;">用古代书法家的字来写一句话是什么感觉？</h2>
-		</div>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>index</title>
+ 	<style type="text/css">
+ 		a{
+ 			text-decoration: none;
+ 		}
+		button {
+ 			width: 200px;
+  			padding: 15px 20px;
+  			margin: 15px;
+			font-size: 24px;
+			cursor: pointer;
+			text-align: center;
+			outline: none;
+			color: #fff;
+			background-color: #9D804F;
+			border: none;
+			border-radius: 15px;
+			box-shadow: 0 12px #87582B;  
+			transition: all 0.5s;
+			float: left;
+ 		}
+
+ 		img {
+ 			float: left;
+ 		}
+
+		button span {
+		  cursor: pointer;
+		  display: inline-block;
+		  position: relative;
+		  transition: 0.5s;
+		}
+
+		button span:after {
+		  content: '»';
+		  position: absolute;
+		  opacity: 0;
+		  top: 0;
+		  right: -20px;
+		  transition: 0.5s;
+		}
+
+		button:hover span {
+		  padding-right: 25px;
+		}
+
+		button:hover span:after {
+		  opacity: 1;
+		  right: 0;
+		}
+ 	
+ 		button:hover {
+   			background-color: #DAA520;
+		}
 
 
-		<div id="img1">
-			<img id="imgName1" >
-		</div>
-		<div id="img2">
-			<img id="imgName2" >
-		</div>
-		<div id="img3">
-			<img id="imgName3" >
-		</div>	
-		<div id="img4">
-			<img id="imgName4" >
-		</div>
-		<div id="img5">
-			<img id="imgName5" >
-		</div>
+		button:active {
+		  background-color: #DAA520;
+		  box-shadow: 0 5px #87582B;
+		  transform: translateY(4px);
+		}
+
+		.img{
+			padding: 20px;
+			width: 690px;
+			height: 250px;
+			top: 48px;
+			margin: 5px auto;
+		}
+		img{
+			padding: 15px;
+		}
+		.button{
+			width: 700px;
+			margin: 5px auto;
+		}
+
+ 	</style>
+ </head>
+ <body style="background-color:#FFFFED;">
+	<h1 style="text-align:center;">基于内容和形式的参与式唐代碑志可视化设计</h1>
+	<div class="img">
+		<img src="zong.png" width="200px">
+ 		<img src="heng.png" width="200px">
+ 		<img src="jizi.png" width="200px">	
+	</div>
+	 	
+
+	<div class="button">
+	 		<a href="https://sugar.aipage.com/dashboard/22c53ddba54b18f16f6b799c38e56e57" target="_blank">
+	 			<button><span>纵向分析</span></button>
+	 		</a>	
+	 		<a href="https://sugar.aipage.com/dashboard/680205fc6854851482b999006d536dc3" target="_blank">
+	 			<button><span>横向对比</span></button>
+	 		</a>		
+	 		<a href="demo.html" target="_blank">
+				<button><span>“集字”体验</span></button>
+			</a>		
 	
-			<div id="input">
-		</div>
-		<div>
-			<button class="btn" onclick="refresh()">刷新</button>
-		</div>
-		<div>
-			<button class="btn" onclick="back()">撤回</button>
-		</div>
-		<div>
-			<button class="btn" onclick="empty()">清空</button>
-		</div>
+	</div>
+
 		
-
-
-		<div class="bg">
-		</div>
-		
-
-	</body>
-</html>
+ 
+ </body>
+ </html>
